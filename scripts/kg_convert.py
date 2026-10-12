@@ -120,6 +120,13 @@ def classify(title, lang):
     if re.search(r'комментари|түшүндүрм|научно-практическ', t):
         return None
     if lang == 'ru':
+        t0 = t.lstrip('"«( ')
+        if t0.startswith('конституционный закон'):
+            return 'constitutional_law'
+        if t0.startswith('закон'):
+            return 'law'
+        if t0.startswith('кодекс') and 'о внесении' not in t and 'о введении' not in t:
+            return 'code'
         if re.search(r'постановлени|указ\b|указ |распоряжени|положени[ея]|решени[ея]|приказ|инструкци|правила|соглашени|договор|протокол|конвенци|меморандум|программ|концепци|стратеги', t[:120]):
             return None
         if t.lstrip('"«').startswith('конституция') and 'закон' not in t[:40]:
@@ -131,6 +138,8 @@ def classify(title, lang):
         if 'закон' in t:
             return 'law'
         return None
+    if re.search(r'мыйзамы\W*$', t) and not re.search(r'токтому|чечими|жарлыгы', t):
+        return 'constitutional_law' if 'конституциялык мыйзам' in t else 'law'
     if re.search(r'өкмөт|министрлер кабинет|жарлы|токтом|жобо|буйру|тескеме|чечим|келишим|макулдашуу|протокол|конвенция|программ|концепци|стратегия', t):
         return None
     if 'конституциясы' in t and 'мыйзам' not in t:

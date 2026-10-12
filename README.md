@@ -11,7 +11,20 @@ Retrieved: **2026-10-12**.
 
 ## Coverage
 
-__COUNTS__
+| Path | Contents | Files |
+|---|---|---:|
+| `ru/konstitutsiya/` | Constitution of 5 May 2021 (Russian) | 1 |
+| `ru/kodeksy/` | Codes (Russian) | 19 |
+| `ru/konstitutsionnye-zakony/` | Constitutional laws (Russian) | 9 |
+| `ru/zakony/<year>/` | Laws (Russian) | 418 |
+| `ky/konstitutsiya/` | Constitution (Kyrgyz) | 1 |
+| `ky/kodekster/` | Codes (Kyrgyz) | 16 |
+| `ky/konstitutsiyalyk-myizamdar/` | Constitutional laws (Kyrgyz) | 4 |
+| `ky/myizamdar/<year>/` | Laws (Kyrgyz) | 171 |
+| **Total** | | **639** |
+
+2,428 archived document pages were examined; 218 were marked repealed and 1,473 were other act
+types (decrees, resolutions, treaties, court decisions, commentaries) and were skipped.
 
 * **Constitution** of 5 May 2021 (in the database edition captured by the archive).
 * **Codes**, **constitutional laws** and **laws** whose page in the old Centralized Database of Legal

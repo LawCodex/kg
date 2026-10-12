@@ -113,7 +113,7 @@ def warc_body(raw):
     if not http_head.startswith('HTTP/') or ' 200' not in http_head.split('\r\n')[0]:
         return None
     h = http_head.lower()
-    if 'transfer-encoding: chunked' in h:
+    if 'transfer-encoding: chunked' in h and re.match(rb'^[0-9a-fA-F]{1,8}(;[^\r]*)?\r\n', body):
         out, pos = b'', 0
         while True:
             e = body.find(b'\r\n', pos)
